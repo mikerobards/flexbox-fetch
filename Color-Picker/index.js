@@ -5,7 +5,7 @@
     
     Set the count to 100 colors, update the .my-color class to maintain the grid structure
 */
-let numColors = 100
+
 
 function displayColors(colors) {
     console.log(colors)
@@ -24,7 +24,7 @@ function displayColors(colors) {
 }
 
 
-async function getColors() {
+async function getColors(numColors) {
     let response = await fetch(`https://apis.scrimba.com/hexcolors?count=${numColors}`)
     let data = await response.json()
     let colors = data.colors
@@ -33,4 +33,5 @@ async function getColors() {
 
 }
 
-getColors()
+let numColors = 100
+getColors(numColors)
