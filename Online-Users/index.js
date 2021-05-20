@@ -16,15 +16,21 @@ async function getUsers() {
     return users
 }
 
+function getUserDiv(user) {
+    return `
+    <div class="my-online-user">
+        <div class="user-username">${user.username}</div>
+        <div class="user-online"></div>
+    </div>
+`
+}
+
 getUsers().then(users => {
     let sampleUser = users[0]
-    let userDiv = `
-        <div class="my-online-user">
-            <div class="user-username">${sampleUser.username}</div>
-            <div class="user-online"></div>
-        </div>
-    `
+    let userDiv = getUserDiv(sampleUser)
 
-    document.body.innerHTML = userDiv
+    document.body.innerHTML = `<div class="my-online-users">
+        ${users.map(user => getUserDiv(user)).join('')}
+    </div>`
 })
 
