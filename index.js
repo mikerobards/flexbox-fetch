@@ -47,13 +47,13 @@ function getPhotosHTML(photos) {
 
 getPhotos().then(photos => {
     document.body.innerHTML = `<div class="my-gallery">
-    <img style="display: none;" class="my-photo" id="my-selected-photo" src="https://picsum.photos/id/1/200/200">
+    <img class="my-photo" id="my-selected-photo" src="https://picsum.photos/id/${photos[2].id}/300/300">
     ${getPhotosHTML(photos)}</div>`
 
     let myPhotoImgs = Array.from(document.getElementsByClassName("my-photo"))
     myPhotoImgs.forEach(photoImg => {
         photoImg.addEventListener("click", event=> {
-            let selectedPhotoSrc = `${photoImg.src.substr(0, photoImg.src.length - 7)}200/200`
+            let selectedPhotoSrc = `${photoImg.src.substr(0, photoImg.src.length - 7)}300/300`
             let selectedPhoto = document.getElementById("my-selected-photo")
             selectedPhoto.src = selectedPhotoSrc
             selectedPhoto.style.display = "inline"
