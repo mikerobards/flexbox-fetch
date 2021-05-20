@@ -2,10 +2,37 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #7fc8f8;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
     font-family: "Lucida Console", Monaco, monospace; 
+}
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+} */
+
+header {
+    height: 10%;
+    background-color: orange;
+}
+
+footer {
+    height: 10%;
+    background-color: orange;
+}
+
+main {
+    background-color: lightgreen;
+    width: auto;
+}
+
+.users-container {
+    display: flex;
+
 }
 
 .my-online-users {

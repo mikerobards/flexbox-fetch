@@ -10,6 +10,8 @@
         -The component should only be wide enough to Fit its Content (and some padding)
 */
 
+const usersDiv = document.getElementById('users')
+
 async function getUsers() {
     let res = await fetch('users.json')
     let users = await res.json()
@@ -29,7 +31,7 @@ getUsers().then(users => {
     let sampleUser = users[0]
     let userDiv = getUserDiv(sampleUser)
 
-    document.body.innerHTML = `<div class="my-online-users">
+    usersDiv.innerHTML = `<div class="my-online-users">
         ${users.map(user => getUserDiv(user)).join('')}
     </div>`
 })
